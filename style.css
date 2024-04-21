@@ -9,8 +9,8 @@ height: 100vh;
 .form input{
 color: black;
 background: white;
-margin: 1em 0;
-padding: 1em;
+margin: 0.5em 0;
+padding: 0.5em 1em;
 }
 .form form{
  display:flex;
@@ -19,10 +19,11 @@ align-items: center;
  font-size: 1.2em;
 }
 .form input[type="submit"]{
-padding: 0.2em 1em;
+padding: 0.3em 1em;
 background: white;
 color: black;
 border: none;
+ font-size: 0.7em;
 
 }
 .popup {
@@ -40,7 +41,7 @@ border: none;
  color: white;
  border: 1px solid white;
   width: 300px;
-  padding: 20px;
+  padding: 2em;
   position: absolute;
   top: 50%;
   left: 50%;
