@@ -1,3 +1,6 @@
+body{
+ margin:0px;
+}
 .form{
  display:flex;
  justify-content:center;
@@ -55,4 +58,10 @@ border: none;
 
 .close:hover {
   color: red;
+}
+@media only screen and (max-width:425px){
+ .popup-content{
+  padding: 1em;
+  width: 250px;
+ }
 }
