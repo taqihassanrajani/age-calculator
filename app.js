@@ -1,39 +1,31 @@
-var userDate = prompt("What is the Date you were born in? Please Enter in Number")
-var userMonth = prompt("What is the Month you were born in? Please Enter in Number")
-var userYear = prompt("What is the Year you were born in? Please Enter in Number")
+function openPopup() {
+  var popup = document.getElementById("agePopup");
+  popup.style.display = "block";
+}
 
-var userDob = userDate + ' ' + userMonth + ' ' + userYear
+function closePopup() {
+  var popup = document.getElementById("agePopup");
+  popup.style.display = "none";
+}
 
-console.log(userDob);
+document.getElementById("dateForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form submission
+  
+  var userDate = document.getElementById("date").value;
+  var userDob = new Date(userDate);
 
-var d = new Date();
+  var d = new Date();
 
-console.log(d)
+  var nowYear = d.getFullYear() - userDob.getFullYear();
+  var nowMonth = nowYear * 12;
+  var nowDays = Math.round((d - userDob) / (1000 * 3600 * 24));
+  var nowHours = nowDays * 24;
 
-var currentMonth = d.getMonth();
-var currentDate = d.getDate();
-var currentYear = d.getFullYear();
+  var ageResults = 'You are ' + nowYear + ' Years old<br>' +
+                  'You are ' + nowMonth + ' Months old<br>' +
+                  'You are ' + nowDays + ' Days old<br>' +
+                  'You are ' + nowHours + ' Hours old';
 
-var now = currentDate + ' ' + currentMonth + ' ' + currentYear
-
-console.log(now)
-
-var nowYear = currentYear - userYear
-
-console.log('You are ' + nowYear + ' Years old')
-alert('You are ' + nowYear + ' Years old')
-
-var nowMonth = nowYear * 12
-
-console.log( 'You are ' + nowMonth + ' Months old')
-alert( 'You are ' + nowMonth + ' Months old')
-
-var nowDays = 365.25 * nowYear
-
-console.log('You are ' + nowDays + ' Days old')
-alert('You are ' + nowDays + ' Days old')
-
-var nowHours = nowDays * 24
-
-console.log('You are ' + nowHours + ' Hours old')
-alert('You are ' + nowHours + ' Hours old')
+  document.getElementById("ageResults").innerHTML = ageResults;
+  openPopup();
+});
