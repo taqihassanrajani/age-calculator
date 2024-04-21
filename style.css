@@ -1,3 +1,28 @@
+.form{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+background: black;
+color: white;
+height: 100vh;
+}
+.form input{
+color: black;
+background: white;
+margin: 1em 0;
+}
+.form form{
+ display:flex;
+flex-direction:column;
+align-items: center;
+}
+.form input[type="submit"]{
+padding: 0.2em 1em;
+background: white;
+color: black;
+border: none;
+
+}
 .popup {
   display: none;
   position: fixed;
@@ -9,7 +34,7 @@
 }
 
 .popup-content {
-  background-color: white;
+  background: black;
   width: 300px;
   padding: 20px;
   position: absolute;
