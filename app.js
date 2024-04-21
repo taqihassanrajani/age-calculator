@@ -18,7 +18,7 @@ document.getElementById("dateForm").addEventListener("submit", function(event) {
 
   var nowYear = d.getFullYear() - userDob.getFullYear();
   var nowMonth = nowYear * 12;
-  var nowDays = Math.round((d - userDob) / (1000 * 3600 * 24));
+  var nowDays = nowYear * 365.25;
   var nowHours = nowDays * 24;
 
   var ageResults = 'You are ' + nowYear + ' Years old<br>' +
